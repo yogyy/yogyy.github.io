@@ -4,48 +4,37 @@ import { images } from './items';
 import { cn } from '@/lib/utils';
 ---
 
-<div class="grid grid-cols-1 min-[400px]:grid-cols-2 my-8 gap-4">
+<div class="columns-2 sm:columns-3 gap-4">
   {
     images.map((image, i) => (
       <div
         class={cn(
-          'relative aspect-video flex items-center justify-center',
-          'hover:rounded-none transition-all duration-200',
-          `image${i} group bg-white/50 hover:bg-white/80 rounded-lg`
+          'relative rounded-lg',
+          `image${i} group bg-white/50 hover:bg-white/80`,
+          'transition-colors duration-200 h-40',
+          (i == 1 || i == 5) && 'h-80',
+          i == 2 && 'h-40 sm:h-80',
+          i != 2 && i != 5 && 'mb-4 sm:mb-0',
+          (i == 0 || i == 2 || i == 4) && 'sm:mb-4'
         )}
       >
         <Image
           src={image}
-          height="200"
-          width="400"
+          width={330}
+          height={185}
           alt="JJK Girls"
           draggable="false"
           class={cn(
-            'absolute object-top h-full object-cover rounded-lg',
-            'transition-all duration-200 jjk-images mix-blend-multiply',
-            'group-hover:rounded-none group-active:rounded-none'
+            'absolute object-center h-full object-cover rounded-lg',
+            'transition-colors duration-200 jjk-images mix-blend-multiply',
+            i == 0 && 'object-left'
           )}
-          fetchpriority="auto"
+          fetchpriority="high"
+          sizes="(max-width: 768px) 213px, 33vw"
         />
       </div>
     ))
   }
-  <div class="items-end flex flex-col justify-between">
-    <p class="text-xs sm:text-base leading-7">
-      don't mind, just a random cashier girl you meet, <br />
-      <span class="text-xs text-opacity-10 text-zinc-600"
-        >have you seen that tiktok edit?</span
-      >
-    </p>
-
-    <p class="text-xs">
-      © <a
-        href="https://twitter.com/inoitoh"
-        target="_blank"
-        class="text-sky-500">inoitoh</a
-      >
-    </p>
-  </div>
 </div>
 
 <!-- why you see this?, i have no idea 
