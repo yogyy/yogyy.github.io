@@ -1,0 +1,56 @@
+---
+import Gallery from '@/components/Gallery.astro';
+import Navbar from '../components/Navbar';
+import Layout from '../layouts/Layout.astro';
+import '@/styles/globals.css';
+---
+
+<Layout title="YoGi FS.">
+  <main class="mt-8 mb-40 px-2 md:px-0 flex-1 h-auto">
+    <Navbar client:load />
+    <section class="w-full">
+      <h1 class="text-white font-medium text-2xl mb-8 tracking-tighter">
+        hey, I'm yogyy 👋
+      </h1>
+      <p class="text-base leading-7">
+        I'm a frontend developer, an <span
+          class="italic"
+          title="no, i'm actually realistic">optimist</span
+        >, and a self-learner. Currently, I'm immersed in frontend development
+        with <a
+          href="https://react.min.dev"
+          target="_blank"
+          class="inline-flex gap-1 label"
+          ><img src="/react.svg" alt="react icon" />React</a
+        >, I usually build minimalist and responsive websites. When it comes to
+        handling server-side data, I use the amazing framework <a
+          href="https://nextjs.org"
+          target="_blank"
+          class="inline-flex gap-1 label"
+          ><img src="/next.min.svg" alt="next.js icon" />Next.js</a
+        >.
+        <div class="w-full relative">
+          <Gallery />
+        </div>
+      </p>
+    </section>
+    <footer class="mt-40">
+      <p class="text-base w-full justify-between flex">
+        <span class=""></span>
+        <span class="inline-flex">
+          i'm copying design <a
+            href="https://leerob.io"
+            target="_blank"
+            class="text-sky-500 ml-1 inline-flex"
+          >
+            <img src="/vercel.svg" alt="vercel svg" />leerob</a
+          >
+        </span>
+        <span
+          class="inline-flex items-end text-xs text-opacity-10 text-zinc-100"
+          >...kinda</span
+        >
+      </p>
+    </footer>
+  </main>
+</Layout>
