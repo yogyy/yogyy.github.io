@@ -14,7 +14,7 @@ export default function Navbar() {
           <li key={nav.name}>
             <a className='relative' href={`https://${nav.link}`} target='_blank'>
               {nav.name}
-              {i === 0 && <div class="absolute h-[1px] top-5 inset-0 bg-gradient-to-r from-transparent to-white w-full" />}
+              {i === 0 && <div className="absolute h-[1px] top-5 inset-0 bg-gradient-to-r from-transparent to-white w-full" />}
             </a>
           </li>
         ))}
