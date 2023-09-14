@@ -7,10 +7,28 @@ export const navbar = [
 ];
 
 export const images = [
-  'https://pbs.twimg.com/media/FzqpKQzaMAAbrWs?format=webp&name=small',
-  'https://pbs.twimg.com/media/F2VJahDaYAAgh1L?format=webp&name=small',
-  'https://pbs.twimg.com/media/FzqwqioaEAEg6Hk?format=webp&name=small',
-  'https://pbs.twimg.com/media/Fzqpa77aYAEZYng?format=webp&name=small',
-  'https://pbs.twimg.com/media/FzqwvloaIAAHoYM?format=webp&name=small',
-  'https://pbs.twimg.com/media/F45xxUYbQAA0_ex?format=webp&name=small',
+  {
+    name: 'Kobeni Chainsaw Man pict',
+    link: 'https://pbs.twimg.com/media/FzqpKQzaMAAbrWs?format=webp&name=small',
+  },
+  {
+    name: 'Reze Chainsaw Man pict',
+    link: 'https://pbs.twimg.com/media/F2VJahDaYAAgh1L?format=webp&name=small',
+  },
+  {
+    name: 'Quanxi Chainsaw Man pict',
+    link: 'https://pbs.twimg.com/media/FytE3IdaMAArwWP?format=webp&name=small',
+  },
+  {
+    name: 'Makima Chainsaw Man pict',
+    link: 'https://pbs.twimg.com/media/Fzqpa77aYAEZYng?format=webp&name=small',
+  },
+  {
+    name: 'Yoru Chainsaw Man pict',
+    link: 'https://pbs.twimg.com/media/FzqwvloaIAAHoYM?format=webp&name=small',
+  },
+  {
+    name: 'Famine Chainsaw Man pict',
+    link: 'https://pbs.twimg.com/media/F45xxUYbQAA0_ex?format=webp&name=small',
+  },
 ];

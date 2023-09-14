@@ -71,9 +71,11 @@
 @layer base {
   html {
     min-width: 360px;
+    color-scheme: dark;
   }
   body {
     font-family: 'Open Sans', sans-serif;
+    @apply bg-gradient-to-br from-black via-zinc-950 to-zinc-800 h-full;
   }
   main {
     max-width: 42rem;

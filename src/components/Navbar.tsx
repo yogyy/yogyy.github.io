@@ -6,10 +6,9 @@ const navlink = [
 
 export default function Navbar() {
 
-
   return (
     <nav className="text-sm font-medium mt-8 mb-16 w-fit">
-      <ul className="flex flex-row gap-3">
+      <ul className="flex flex-row gap-3" >
         {navlink.map((nav, i) => (
           <li key={nav.name}>
             <a className='relative' href={`https://${nav.link}`} target='_blank'>

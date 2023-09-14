@@ -1,52 +1,26 @@
 ---
 import Gallery from '@/components/Gallery.astro';
-import Navbar from '../components/Navbar';
+import Navbar from '@/components/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
 import '@/styles/globals.css';
+import Me from '@/components/Me.astro';
 ---
 
 <Layout title="YoGi FS." description="Developer Pemula puh">
-  <main class="mt-8 mb-40 px-2 md:px-0 flex-1 h-auto">
-    <Navbar client:load />
+  <main class="mt-8 mb-20 px-2 md:px-0 flex-1 h-auto">
+    <Navbar />
     <section class="w-full">
-      <h1 class="text-white font-medium text-2xl mb-8 tracking-tighter">
-        hey, I'm yogyy 👋
-      </h1>
-      <p class="text-base leading-7">
-        I'm a frontend developer, an <span
-          class="italic hover:cursor-help"
-          title="no, i'm actually realistic">optimist</span
-        >, and a self-learner. Currently, I'm immersed in frontend development
-        with <a
-          href="https://react.min.dev"
-          target="_blank"
-          class="inline-flex gap-1 label"
-          ><img
-            width="14"
-            height="14"
-            src="/react.min.svg"
-            alt="react icon"
-          />React</a
-        >, I usually build minimalist and responsive websites. When it comes to
-        handling server-side data, I use the amazing framework
-        <a
-          href="https://nextjs.org"
-          target="_blank"
-          class="inline-flex gap-1 label"
-        >
-          <img
-            width="14"
-            height="14"
-            src="/next.min.svg"
-            alt="next.js icon"
-          />Next.js
-        </a>.
-      </p>
-      <div class="w-full relative my-8">
+      <div class="flex flex-col gap-8">
+        <h1 class="text-white font-medium text-2xl tracking-tighter">
+          hey, I'm yogyy 👋
+        </h1>
+        <Me />
+      </div>
+      <div class="relative my-8">
         <Gallery />
         <div class="items-start flex justify-between">
           <p class="text-xs sm:text-base flex-wrap">
-            don't mind, just a random cashier girl you meet,<span
+            random girl that i'll never see again,<span
               class="text-xs text-opacity-10 text-zinc-600"
               >have you seen that tiktok edit?</span
             >

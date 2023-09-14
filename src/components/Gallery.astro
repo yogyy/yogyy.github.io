@@ -19,17 +19,18 @@ import { cn } from '@/lib/utils';
         )}
       >
         <Image
-          src={image}
+          src={image.link}
           width={330}
           height={185}
-          alt="JJK Girls"
+          alt={image.name}
           draggable="false"
           class={cn(
-            'absolute object-center h-full object-cover rounded-lg',
+            'absolute object-center h-full object-cover rounded-md',
             'transition-colors duration-200 jjk-images mix-blend-multiply',
-            i == 0 && 'object-left'
+            i == 0 && 'object-left',
+            i == 2 && 'object-top sm:object-center'
           )}
-          fetchpriority="high"
+          fetchpriority="auto"
         />
       </div>
     ))
