@@ -7,18 +7,11 @@ const navlink = [
 ---
 
 <nav class="text-sm font-medium mt-8 mb-16 w-fit">
-  <ul class="flex flex-row gap-3" onclick="
-  console.log('test')
-  ">
+  <ul class="flex flex-row gap-3">
     {
       navlink.map((nav, i) => (
         <li>
-          <a
-            class="relative"
-            id="pppp"
-            href={`https://${nav.link}`}
-            target="_blank"
-          >
+          <a class="relative" href={`https://${nav.link}`} target="_blank">
             {nav.name}
             {i === 0 && (
               <div class="absolute h-[1px] top-5 inset-0 bg-gradient-to-r from-transparent to-white w-full" />
