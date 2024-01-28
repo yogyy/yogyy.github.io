@@ -5,7 +5,7 @@ interface Props {
   image?: string;
 }
 
-const { title, description, image = '/og_image.jpg' } = Astro.props;
+const { title, description, image = "/og_image.jpg" } = Astro.props;
 const canonicalURL = new URL(Astro.url);
 ---
 
@@ -33,7 +33,27 @@ const canonicalURL = new URL(Astro.url);
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
   </head>
-  <body class="flex-auto max-w-2xl mx-4 md:mx-auto">
+  <body
+    class="mx-4 flex flex-col items-center justify-center bg-gradient-to-br from-black via-[#0d1117] to-zinc-800 md:mx-auto">
     <slot />
+    <footer class="max-w-2xl">
+      <p class="flex w-full justify-between text-base">
+        <span class=""></span>
+        <span class="inline-flex">
+          i'm copying design
+          <a
+            href="https://leerob.io"
+            target="_blank"
+            class="ml-1 inline-flex text-sky-500">
+            <img width="14" height="14" src="/vercel.svg" alt="vercel svg" />
+            leerob
+          </a>
+        </span>
+        <span
+          class="inline-flex items-end text-xs text-zinc-100 text-opacity-10">
+          ...kinda
+        </span>
+      </p>
+    </footer>
   </body>
 </html>
