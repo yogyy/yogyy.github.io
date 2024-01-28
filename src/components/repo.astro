@@ -1,0 +1,69 @@
+---
+import { type Endpoints } from "@octokit/types";
+interface Props {
+  repo: Endpoints["GET /users/{username}/repos"]["response"]["data"][number];
+  className?: string;
+}
+const { repo, className } = Astro.props;
+import colors from "@/lib/colors.json";
+import { Fork, Grab, Repo as RepoIcon, Star } from "./icons";
+import { cn } from "@/lib/utils";
+const color = Object.values(colors).find(
+  (lang) => lang.url === `https://github.com/trending?l=${repo.language}`,
+);
+---
+
+<li class={cn("h-full w-full px-2", className)}>
+  <div class={cn("box p-3 text-[#8b949e] h-fit")} aria-label="repostory">
+    <div class="flex w-full flex-col">
+      <div class="flex flex-1 items-center [&>*]:fill-[#8b949e]">
+        <div class="flex flex-1 items-center [&>svg]:mr-1.5">
+          <RepoIcon />
+          <a
+            href={repo.url}
+            class="mr-1 break-words text-[14px] font-semibold text-[#58a6ff] hover:underline">
+            {repo.name}
+          </a>
+          <span
+            class="inline rounded-[2em] border border-[#30363d] p-[.12em_.5em] text-[11px] leading-4">
+            {repo.private ? "Private" : "Public"}
+          </span>
+        </div>
+        <div class="hover:cursor-grab">
+          <Grab />
+        </div>
+      </div>
+      <p class="mt-2 inline-flex text-xs">{repo.description}</p>
+      <p class="mt-2 inline-flex text-xs">
+        <span class="mr-3">
+          <span
+            class="repo-language-color"
+            style=`background-color: ${color?.color} `></span>
+          <span>{repo.language}</span>
+        </span>
+        {
+          repo.stargazers_count! >= 1 && (
+            <a
+              href={repo.stargazers_url}
+              target="_blank"
+              class="flex items-center justify-end gap-1 [&>svg]:fill-[#8b949e]">
+              <Star />
+              {repo.stargazers_count}
+            </a>
+          )
+        }
+        {
+          repo.forks_count! >= 1 && (
+            <a
+              href={repo.forks_url}
+              target="_blank"
+              class="ml-4 flex items-center justify-end gap-1 [&>svg]:fill-[#8b949e]">
+              <Fork />
+              {repo.forks_count}
+            </a>
+          )
+        }
+      </p>
+    </div>
+  </div>
+</li>
