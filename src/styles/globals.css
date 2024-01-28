@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -70,23 +70,74 @@
 
 @layer base {
   html {
-    min-width: 360px;
     color-scheme: dark;
   }
   body {
-    font-family: 'Open Sans', sans-serif;
-    @apply bg-gradient-to-br from-black via-zinc-950 to-zinc-800 h-full;
+    font-family: "Open Sans", sans-serif;
+    color: #d4d4d4;
   }
   main {
     max-width: 42rem;
-    color: #d4d4d4;
     font-size: 20px;
     line-height: 1.6;
+  }
+  .bg-grid {
+    background-size: 100px 100px;
+    z-index: -2;
+    background-image: url("/bg-grid.png");
+    background-position-y: -9px;
+    opacity: 40%;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black,
+      10%,
+      white,
+      90%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      25%,
+      white,
+      90%,
+      transparent
+    );
+  }
+
+  .bg-grad::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 0%;
+    bottom: 0%;
+    width: 150%;
+    left: 0%;
+    background: linear-gradient(247.23deg, #4af2c8 0%, #2f4cb3 100%);
+    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.8), transparent 70%);
+    mask-image: radial-gradient(rgba(0, 0, 0, 0.8), transparent 70%);
   }
 }
 
 @layer components {
   .label {
-    @apply border border-neutral-700 bg-neutral-800 rounded p-1 text-sm inline-flex items-center leading-4 text-neutral-100;
+    @apply inline-flex items-center rounded border border-neutral-700 bg-neutral-800 p-1 text-sm leading-4 text-neutral-100;
+  }
+  .box {
+    background-color: #0d1117;
+    border-color: #30363d;
+    border-radius: 0.375rem;
+    border-style: solid;
+    border-width: max(1px, 0.0625rem);
+    font-size: 14px;
+  }
+  .repo-language-color {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
   }
 }
