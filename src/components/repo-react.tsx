@@ -20,7 +20,7 @@ export default function Repo(props: RepoProps) {
             <div className="flex flex-1 items-center [&>svg]:mr-1.5">
               <RepoIcon />
               <a
-                href={repo.url}
+                href={repo.html_url}
                 className="mr-1 break-words text-[14px] font-semibold text-[#58a6ff] hover:underline">
                 {repo.name}
               </a>
@@ -42,7 +42,7 @@ export default function Repo(props: RepoProps) {
             </span>
             {repo.stargazers_count! >= 1 && (
               <a
-                href={repo.stargazers_url}
+                href={`${repo.html_url}/stargazers`}
                 target="_blank"
                 className="flex items-center justify-end gap-1 [&>svg]:fill-[#8b949e]">
                 <Star />
@@ -51,7 +51,7 @@ export default function Repo(props: RepoProps) {
             )}
             {repo.forks_count! >= 1 && (
               <a
-                href={repo.forks_url}
+                href={`${repo.html_url}/forks`}
                 target="_blank"
                 className="ml-4 flex items-center justify-end gap-1 [&>svg]:fill-[#8b949e]">
                 <Fork />
