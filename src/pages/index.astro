@@ -1,14 +1,14 @@
 ---
 import Gallery from "@/components/Gallery.astro";
 import Navbar from "@/components/Navbar.astro";
-import Layout from "../layouts/Layout.astro";
+import Layout from "@/components/Layout.astro";
 import "@/styles/globals.css";
 import Me from "@/components/Me.astro";
 import { Repos } from "@/components/Repository";
 ---
 
 <Layout title="YoGi FS." description="Developer Pemula puh">
-  <main class="mb-20 mt-8 h-auto min-h-dvh flex-1 overflow-x-hidden">
+  <main class="mt-8 h-auto">
     <div class="bg-grid fixed inset-0 z-[-2]"></div>
     <Navbar className="" />
     <section class="w-full">
@@ -19,7 +19,7 @@ import { Repos } from "@/components/Repository";
         <Me />
       </div>
       <div class="relative my-8">
-        <Repos client:only />
+        <Repos client:load />
         <Gallery />
         <div class="flex items-start justify-between">
           <p class="flex-wrap text-xs sm:text-base">
