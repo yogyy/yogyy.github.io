@@ -10,7 +10,7 @@
 }
 @font-face {
   font-family: GeistMedium;
-  src: url("Geist-Medium.woff2");
+  src: url("/Geist-Medium.woff2");
   font-weight: 500;
 }
 @layer base {
