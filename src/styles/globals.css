@@ -1,9 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Geist;
+  src: url("/GeistVariableVF.woff2");
+  /* src: url("/GeistVariableVF.woff2"); */
+  font-weight: 400;
+}
+@font-face {
+  font-family: GeistMedium;
+  src: url("Geist-Medium.woff2");
+  font-weight: 500;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -73,8 +82,9 @@
     color-scheme: dark;
   }
   body {
-    font-family: "Open Sans", sans-serif;
+    font-family: Geist;
     color: #d4d4d4;
+    line-height: 16px;
   }
   main {
     max-width: 42rem;
