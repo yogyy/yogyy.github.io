@@ -16,6 +16,12 @@ const canonicalURL = new URL(Astro.url);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.min.svg" />
+    <meta name="author" content="yogyy" />
+    <meta
+      name="keywords"
+      content="yogyy, frontend, react, web development, JavaScript, Typescript, UI,"
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -33,9 +39,14 @@ const canonicalURL = new URL(Astro.url);
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+    <meta
+      name="google-site-verification"
+      content="UAHuj3fmabjmlcpPrQBiLwHAoqAjv7ii30QKd7t5lLo"
+    />
   </head>
   <body
-    class="mx-4 flex flex-col items-center justify-center bg-gradient-to-br from-black via-[#0d1117] to-zinc-800 md:mx-auto">
+    class="md:mx-aut mx-4 flex min-h-dvh flex-col items-center justify-center bg-gradient-to-br from-black via-[#0d1117] to-zinc-800">
     <slot />
     <Footer />
   </body>
