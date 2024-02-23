@@ -1,13 +1,8 @@
 import { cn } from "@/lib/utils";
 import type { Endpoints } from "@octokit/types";
 import colors from "@/constants/colors.json";
-import { Fork, Grab, Repo as RepoIcon, Star } from "./icons";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { Fork, Repo as RepoIcon, Star } from "./icons";
+
 interface RepoProps extends React.LiHTMLAttributes<HTMLLIElement> {
   repo: Endpoints["GET /users/{username}/repos"]["response"]["data"][number];
 }
@@ -17,13 +12,17 @@ export function Repo(props: RepoProps) {
     (lang) => lang.url === `https://github.com/trending?l=${repo.language}`,
   );
   return (
-    <li className={cn("h-full w-full", className)}>
+    <li
+      className={cn("relative flex w-full", className)}
+      onClick={() => {
+        console.log(color);
+      }}>
       <div
-        className={cn("box h-fit p-3 text-[#8b949e]")}
+        className={cn("box  flex-1 p-3 text-[#8b949e]")}
         aria-label="repostory">
-        <div className="flex w-full flex-col">
-          <div className="flex flex-1 items-center [&>*]:fill-[#8b949e]">
-            <div className="flex flex-1 items-center [&>svg]:mr-1.5">
+        <div className="flex h-full w-full flex-col">
+          <div className="flex items-center [&>*]:fill-[#8b949e]">
+            <div className="flex items-center [&>svg]:mr-1.5">
               <RepoIcon />
               <a
                 href={repo.html_url}
@@ -34,19 +33,8 @@ export function Repo(props: RepoProps) {
                 {repo.private ? "Private" : "Public"}
               </span>
             </div>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger className="hover:cursor-grab">
-                  <Grab />
-                </TooltipTrigger>
-                <TooltipContent className="text-balance border border-[#30363d] text-[#8b949e]">
-                  drag and drop library not worked <br /> on astro with react
-                  integration
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
           </div>
-          <p className="mt-2 inline-flex text-xs">{repo.description}</p>
+          <p className="mb-auto mt-2 inline-flex text-xs">{repo.description}</p>
           <p className="mt-2 inline-flex items-center text-xs leading-4">
             <span className="mr-3 inline-flex gap-1">
               <span

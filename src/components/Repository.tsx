@@ -14,7 +14,7 @@ export function Repos() {
   return (
     <div className="my-8">
       <h1 className="text-base">latest code i've push to github.</h1>
-      <ul className="gallery relative mt-2 columns-1 gap-0 space-y-3 sm:columns-2">
+      <ul className="grid w-full grid-cols-1 gap-y-4 sm:grid-cols-2">
         {isLoading
           ? [...Array(6)].map((_, i) => (
               <li key={i} className="px-0 sm:px-2">
@@ -22,7 +22,7 @@ export function Repos() {
               </li>
             ))
           : data?.map((repo) => (
-              <Repo key={repo.id} repo={repo} className="px-0 sm:px-2" />
+              <Repo key={repo.id} repo={repo} className="w-full px-0 sm:px-2" />
             ))}
       </ul>
     </div>
