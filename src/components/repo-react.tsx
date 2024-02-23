@@ -12,11 +12,7 @@ export function Repo(props: RepoProps) {
     (lang) => lang.url === `https://github.com/trending?l=${repo.language}`,
   );
   return (
-    <li
-      className={cn("relative flex w-full", className)}
-      onClick={() => {
-        console.log(color);
-      }}>
+    <li className={cn("relative flex w-full", className)}>
       <div
         className={cn("box  flex-1 p-3 text-[#8b949e]")}
         aria-label="repostory">
