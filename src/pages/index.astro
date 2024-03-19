@@ -1,16 +1,16 @@
 ---
-import Gallery from "@/components/Gallery.astro";
 import Navbar from "@/components/Navbar.astro";
 import Layout from "@/components/Layout.astro";
 import "@/styles/globals.css";
 import Me from "@/components/Me.astro";
 import { Repos } from "@/components/Repository";
+import TechStack from "@/components/TechStacks.astro";
 ---
 
 <Layout
   title="YoGi FS."
   description="I'm a full-stack web developer with React and Typescript expertise. I specialize in creating visually appealing, user-friendly websites, and responsive web applications.">
-  <main class="mt-8 h-auto">
+  <main class="h-auto">
     <div class="bg-grid fixed inset-0 z-[-2]"></div>
     <Navbar />
     <section class="w-full">
@@ -22,20 +22,8 @@ import { Repos } from "@/components/Repository";
       </div>
       <div class="relative my-8">
         <Repos client:load />
-        <Gallery />
-        <div class="flex items-start justify-between">
-          <p class="flex-wrap text-xs sm:text-base">
-            random girl that i'll never see again.
-          </p>
-          <a
-            href="https://twitter.com/inoitoh"
-            target="_blank"
-            class="inline-flex flex-nowrap text-xs">
-            ©
-            <span class="text-sky-500">inoitoh</span>
-          </a>
-        </div>
       </div>
+      <TechStack />
     </section>
   </main>
 </Layout>
