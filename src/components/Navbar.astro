@@ -9,15 +9,18 @@ const navlink = [
 const { className } = Astro.props;
 ---
 
-<nav class={cn("mb-16 w-fit text-sm font-medium", className)}>
+<nav class={cn("py-8 w-fit text-sm font-medium", className)}>
   <ul class="flex flex-row gap-3">
     {
       navlink.map((nav, i) => (
         <li>
-          <a class="relative" href={`https://${nav.link}`} target="_blank">
+          <a
+            class="relative"
+            href={`https://${nav.link}`}
+            target="_blank">
             {nav.name}
             {i === 0 && (
-              <div class="absolute inset-0 top-5 h-[1px] w-full bg-gradient-to-r from-transparent to-white" />
+              <div class="absolute inset-0 top-5 h-[1px] w-full bg-gradient-to-r from-transparent to-[#58a6ff]" />
             )}
           </a>
         </li>

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import type { Endpoints } from "@octokit/types";
 import colors from "@/constants/colors.json";
+import type { Endpoints } from "@octokit/types";
 import { Fork, Repo as RepoIcon, Star } from "./icons";
 
 interface RepoProps extends React.LiHTMLAttributes<HTMLLIElement> {
@@ -30,7 +30,9 @@ export function Repo(props: RepoProps) {
               </span>
             </div>
           </div>
-          <p className="mb-auto mt-2 inline-flex text-xs">{repo.description}</p>
+          <p className="mb-auto mt-2 inline-flex text-[13px]">
+            {repo.description}
+          </p>
           <p className="mt-2 inline-flex items-center text-xs leading-4">
             <span className="mr-3 inline-flex gap-1">
               <span

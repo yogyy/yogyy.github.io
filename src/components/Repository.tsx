@@ -1,8 +1,8 @@
-import { Repo } from "./repo-react";
-import type { Endpoints } from "@octokit/types";
 import useSWR from "swr";
+import { Repo } from "./repo-react";
 import { fetcher } from "@/lib/utils";
 import { Skeleton } from "./ui/skeleton";
+import type { Endpoints } from "@octokit/types";
 
 type Repos = Endpoints["GET /users/{username}/repos"]["response"]["data"];
 export function Repos() {
@@ -13,7 +13,7 @@ export function Repos() {
 
   return (
     <div className="my-8">
-      <h1 className="text-base">latest code i've push to github.</h1>
+      <h1 className="my-2 text-base">latest code i've push to github.</h1>
       <ul className="grid w-full grid-cols-1 gap-y-4 sm:grid-cols-2">
         {isLoading
           ? [...Array(6)].map((_, i) => (

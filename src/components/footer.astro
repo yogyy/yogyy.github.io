@@ -2,12 +2,16 @@
 import { links } from "@/constants/socials";
 ---
 
-<footer class="h-auto w-full max-w-2xl overflow-hidden">
+<footer class="mt-auto h-auto w-full max-w-2xl overflow-hidden">
   <nav class="w-full">
-    <ul aria-label="social links" class="flex h-auto justify-end gap-3">
+    <ul
+      aria-label="social links"
+      class="flex h-auto justify-end gap-3">
       {
         links.map((link) => (
-          <li class="hover:text-[#58a6ff]" aria-label={link.alt}>
+          <li
+            class="hover:text-[#58a6ff]"
+            aria-label={link.alt}>
             <a
               href={link.href}
               target="_blank"
