@@ -14,7 +14,7 @@ export function Repo(props: RepoProps) {
   return (
     <li className={cn("relative flex w-full", className)}>
       <div
-        className={cn("box  flex-1 p-3 text-[#8b949e]")}
+        className={cn("box flex-1 overflow-hidden p-3 text-[#8b949e]")}
         aria-label="repostory">
         <div className="flex h-full w-full flex-col">
           <div className="flex items-center [&>*]:fill-[#8b949e]">
