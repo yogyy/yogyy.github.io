@@ -3,19 +3,20 @@ import colors from "@/constants/colors.json";
 import type { Endpoints } from "@octokit/types";
 import { Fork, Repo as RepoIcon, Star } from "./icons";
 
-interface RepoProps extends React.LiHTMLAttributes<HTMLLIElement> {
+interface RepoProps {
+  className?: string;
   repo: Endpoints["GET /users/{username}/repos"]["response"]["data"][number];
 }
-export function Repo(props: RepoProps) {
-  const { className, repo } = props;
+export function Repo({ className, repo }: RepoProps) {
   const color = Object.values(colors).find(
     (lang) => lang.url === `https://github.com/trending?l=${repo.language}`,
   );
+
   return (
-    <li className={cn("relative flex w-full", className)}>
-      <div
-        className={cn("box flex-1 overflow-hidden p-3 text-[#8b949e]")}
-        aria-label="repostory">
+    <li
+      className={cn("relative flex w-full", className)}
+      aria-label="repostory">
+      <div className="box flex-1 overflow-hidden p-3">
         <div className="flex h-full w-full flex-col">
           <div className="flex items-center [&>*]:fill-[#8b949e]">
             <div className="flex items-center [&>svg]:mr-1.5">
