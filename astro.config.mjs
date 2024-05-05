@@ -13,7 +13,4 @@ export default defineConfig({
     sitemap(),
     react(),
   ],
-  image: {
-    domains: ["pbs.twimg.com"],
-  },
 });
