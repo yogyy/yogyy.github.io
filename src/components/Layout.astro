@@ -1,12 +1,19 @@
 ---
+import "@/styles/globals.css";
+import Navbar from "./Navbar.astro";
+import Footer from "@/components/footer.astro";
+import { ClientRouter } from "astro:transitions";
+
 interface Props {
   title: string;
-  description: string;
+  description?: string;
   image?: string;
 }
-import Footer from "@/components/footer.astro";
-
-const { title, description, image = "/og_image.jpg" } = Astro.props;
+const {
+  title,
+  description = "Frontend developer, realist, love to code",
+  image = "/og_image.jpg",
+} = Astro.props;
 const canonicalURL = new URL(Astro.url);
 ---
 
@@ -14,40 +21,97 @@ const canonicalURL = new URL(Astro.url);
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.min.svg" />
-    <meta name="author" content="yogyy" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.min.svg"
+    />
+    <meta
+      name="author"
+      content="yogyy"
+    />
     <meta
       name="keywords"
       content="yogyy, frontend, react, web development, JavaScript, Typescript, UI,"
     />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="sitemap"
+      href="/sitemap-index.xml"
+    />
 
     <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalURL} />
-    <meta name="robots" content="index, follow" />
+    <meta
+      name="description"
+      content={description}
+    />
+    <link
+      rel="canonical"
+      href={canonicalURL}
+    />
+    <meta
+      name="robots"
+      content="index, follow"
+    />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta
+      property="og:type"
+      content="website"
+    />
+    <meta
+      property="og:url"
+      content={Astro.url}
+    />
+    <meta
+      property="og:title"
+      content={title}
+    />
+    <meta
+      property="og:description"
+      content={description}
+    />
+    <meta
+      property="og:image"
+      content={new URL(image, Astro.url)}
+    />
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    <meta
+      property="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      property="twitter:url"
+      content={Astro.url}
+    />
+    <meta
+      property="twitter:title"
+      content={title}
+    />
+    <meta
+      property="twitter:description"
+      content={description}
+    />
+    <meta
+      property="twitter:image"
+      content={new URL(image, Astro.url)}
+    />
 
     <meta
       name="google-site-verification"
       content="UAHuj3fmabjmlcpPrQBiLwHAoqAjv7ii30QKd7t5lLo"
     />
+    <ClientRouter />
   </head>
   <body
     class="mx-4 flex min-h-dvh flex-col items-center justify-start bg-[#0D1117] md:mx-auto">
-    <slot />
+    <main class="h-auto">
+      <div class="bg-grid fixed inset-0 z-[-2]"></div>
+      <Navbar />
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
