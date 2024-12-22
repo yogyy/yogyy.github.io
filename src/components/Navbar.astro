@@ -2,29 +2,33 @@
 import { cn } from "@/lib/utils";
 
 const navlink = [
-  { name: "home", link: "yogyy.vercel.app" },
-  { name: "blog", link: "yogyy.vercel.app/posts" },
-  { name: "guestbook", link: "burungbiru.vercel.app" },
+  { name: "home", link: "/home" },
+  { name: "work", link: "/work" },
 ];
-const { className } = Astro.props;
+const url = Astro.url.pathname;
 ---
 
-<nav class={cn("py-8 w-fit text-sm font-medium", className)}>
+<nav class="w-fit text-sm font-medium">
   <ul class="flex flex-row gap-3">
     {
-      navlink.map((nav, i) => (
-        <li>
-          <a
-            class="relative"
-            href={`https://${nav.link}`}
-            target="_blank">
-            {nav.name}
-            {i === 0 && (
-              <div class="absolute inset-0 top-5 h-[1px] w-full bg-gradient-to-r from-transparent to-[#58a6ff]" />
-            )}
-          </a>
-        </li>
-      ))
+      navlink.map(({ link, name }) => {
+        const active = (url === "/" && link === "/home") || url === link;
+        return (
+          <li class="relative">
+            <a
+              class={active ? "text-link" : ""}
+              href={link === "/home" ? "/" : link}>
+              {name}
+              <div
+                class={cn(
+                  "absolute inset-0 top-5 h-[1px] w-full bg-gradient-to-r from-transparent",
+                  active ? "to-link" : "to-transparent",
+                )}
+              />
+            </a>
+          </li>
+        );
+      })
     }
   </ul>
 </nav>
