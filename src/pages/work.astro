@@ -1,0 +1,83 @@
+---
+import Layout from "@/components/Layout.astro";
+import Name from "@/components/name.astro";
+
+let projects = [
+  { name: "Notflox" },
+  { name: "burungbiru" },
+  { name: "galeri" },
+  { name: "fool-translations-api" },
+];
+
+let sideProjects = [
+  { name: "linktree" },
+  { name: "hybrid" },
+  { name: "framer-motion-basic-" },
+  { name: "DressLy" },
+  { name: "the-malaka" },
+  { name: "ghsearcher" },
+  { name: "https://yogyy-cmd.pages.dev/" },
+];
+---
+
+<Layout
+  title="Projects | Yogi FS"
+  description="">
+  <section class="w-screen max-w-screen-md">
+    <div class="flex flex-col gap-8">
+      <Name />
+      <p class="text-base leading-7 text-gray-400">
+        Not like my unfinished project, These are Completed projects that just
+        need some final tweaks.
+      </p>
+    </div>
+    <ul class="flex list-disc flex-col text-base">
+      {
+        projects.map((p) => (
+          <li class="font-mono">
+            <a href={`https://github.com/yogyy/${p.name}`}>{p.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="py-8">
+      <h2>Other Projects</h2>
+      <p class="text-base leading-7 text-gray-400">
+        side project that published with github pages (most of em)
+      </p>
+      <ul class="flex list-disc flex-col text-base">
+        <li class="font-mono">
+          <a href="/">this site</a>
+        </li>
+        {
+          sideProjects.map((project) => (
+            <li class="font-mono">
+              <a
+                target="_blank"
+                href={
+                  project.name.includes("https")
+                    ? project.name
+                    : `https://yogyy.github.io/${project.name}`
+                }>
+                {project.name.includes("https") ? "porto-cmd" : project.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Layout>
+
+<style scoped>
+  a {
+    color: hsl(var(--link));
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  a:hover {
+    color: hsl(var(--link) / 0.7);
+  }
+</style>
