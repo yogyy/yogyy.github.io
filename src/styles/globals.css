@@ -66,7 +66,7 @@
     );
   }
 
-  .bg-grad::before {
+  .bg-grid::before {
     position: absolute;
     z-index: -1;
     content: "";
@@ -80,7 +80,7 @@
   }
 
   .box {
-    background-color: #0d1117;
+    background-color: #0d111710;
     border-color: #30363d;
     border-radius: 0.375rem;
     border-style: solid;
