@@ -5,15 +5,11 @@ import { Repos } from "@/components/Repository";
 ---
 
 <Layout title="Yogi FS">
-  <section class="w-full">
-    <div class="flex flex-col gap-8">
+  <section class="h-full">
+    <div class="mb-10 flex flex-col gap-8">
       <Name />
       <p class="hyphens-manual text-base leading-7">
         Frontend developer, realist, and loves to create <i>side</i> project.
-        <span class="text-transparent">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores,
-          nulla molestiae provident
-        </span>
       </p>
     </div>
     <Repos client:load />
