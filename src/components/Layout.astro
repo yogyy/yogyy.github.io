@@ -21,78 +21,26 @@ const canonicalURL = new URL(Astro.url);
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/favicon.min.svg"
-    />
-    <meta
-      name="author"
-      content="yogyy"
-    />
-    <link
-      rel="sitemap"
-      href="/sitemap-index.xml"
-    />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.min.svg" />
+    <meta name="author" content="yogyy" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{title}</title>
-    <meta
-      name="description"
-      content={description}
-    />
-    <link
-      rel="canonical"
-      href={canonicalURL}
-    />
-    <meta
-      name="robots"
-      content="index, follow"
-    />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content="index, follow" />
 
-    <meta
-      property="og:type"
-      content="website"
-    />
-    <meta
-      property="og:url"
-      content={Astro.url}
-    />
-    <meta
-      property="og:title"
-      content={title}
-    />
-    <meta
-      property="og:description"
-      content={description}
-    />
-    <meta
-      property="og:image"
-      content={new URL(image, Astro.url)}
-    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
 
-    <meta
-      property="twitter:card"
-      content="summary_large_image"
-    />
-    <meta
-      property="twitter:url"
-      content={Astro.url}
-    />
-    <meta
-      property="twitter:title"
-      content={title}
-    />
-    <meta
-      property="twitter:description"
-      content={description}
-    />
-    <meta
-      property="twitter:image"
-      content={new URL(image, Astro.url)}
-    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
     <meta
       name="google-site-verification"
       content="UAHuj3fmabjmlcpPrQBiLwHAoqAjv7ii30QKd7t5lLo"
@@ -100,8 +48,8 @@ const canonicalURL = new URL(Astro.url);
     <ClientRouter />
   </head>
   <body
-    class="flex min-h-dvh flex-col items-center justify-start p-8 md:mx-auto">
-    <main class="h-auto">
+    class="flex min-h-dvh flex-col items-center justify-between p-8 md:mx-auto">
+    <main class="h-full">
       <Navbar />
       <slot />
     </main>
